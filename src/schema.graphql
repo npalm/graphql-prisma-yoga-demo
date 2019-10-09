@@ -1,0 +1,155 @@
+type Query {
+    # Find all persons, optional search by name
+    persons(filter: InputPerson): [Person!]
+    # Find a person based by id
+    person(id: ID!): Person
+    # Find all talks
+    talks(filter: InputTalk): [Talk!]
+    # Find a talk by id
+    talk(id: ID!): Talk
+    # Find all conferences
+    conferences(filter: InputConference): [Conference!]
+    # Find a conference based on the name
+    conference(id: ID!): Conference
+    # Find a comment by id
+    comment(id: ID!): Comment
+    # Find comments
+    comments: [Comment!]
+}
+
+type Mutation {
+    addPerson(person: InputPerson!): Person
+    addSpeakerToTalk(talkId: ID, speakerId: ID): Talk
+}
+
+type Subscription {
+    # Subscribe to all new comments
+    comments: CommentSubscriptionPayload!
+}
+
+# Object to represent a Person
+type Person {
+    # The technical id
+    id: ID!
+    # Fullname of the person
+    name: String!
+    # URL to the blog
+    blog: String
+    # Github account id
+    githubAccount: String
+    # Talks given by the person
+    talks: [Talk!]
+}
+
+# Object to represent a talk
+type Talk {
+    # The technical id
+    id: ID!
+    # Title of the talk
+    title: String!
+    # Short summary of the talk
+    summary: String
+    # Speakers of the talk
+    speakers: [Person!]
+    # Conferences where the talk is on the agenda
+    conferences: [Conference!]
+}
+
+# Object to represent a conference
+type Conference {
+    # The technical id
+    id: ID!
+    # Name of the conference
+    name: String!
+    # City where the conference is held
+    location: City
+    # Talks on the conference agenda
+    talks: [Talk!]
+}
+
+# Object to represent a comment
+type Comment {
+    # The technical id
+    id: ID!
+    # The comment text
+    comment: String!
+    # Creation time of the comment
+    createdOn : String
+    # The author of the comment
+    author: String!
+    # The talk for which the comment is made
+    talk: Talk!
+}
+
+# Input type for a new Comment
+input InputComment {
+    # The comment text
+    comment: String!
+    # The id of the author
+    author: String!
+    # The id of the talk
+    talkId: ID!
+}
+
+# Input type for a new Person
+input InputPerson {
+    # Fullname of the person
+    name: String
+    # URL to the blog
+    blog: String
+    # Github account id
+    githubAccount: String
+}
+
+
+# Input type for a new Talk
+input InputTalk {
+    # Title of the talk
+    title: String
+    # Short summary of the talk
+    summary: String
+}
+
+# Input type for a new Conference
+input InputConference {
+    # Name of the conference
+    name: String
+    # City where the conference is held
+    city: String
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
+
+type CommentSubscriptionPayload {
+  mutation: MutationType!
+  node: Comment
+  updatedFields: [String!]
+  previousValues: CommentPreviousValues
+}
+type CommentPreviousValues {
+  id: ID!
+  comment: String!
+  createdOn: String
+  author: String!
+}
+
+type Me {
+  name: String!
+}
+
+
+type City {
+    id: ID!
+    name: String!
+    bars: [Bar]
+}
+
+type Bar {
+    id: ID!
+    name: String!
+    city: City!
+}
