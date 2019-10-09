@@ -19,7 +19,7 @@ This GraphQL demo is using yoga to combine the GraphQL model of two applications
 ### The conference app
 
 The conference app can store information about talks and speakers on a conference based on the next model. 
-![model-talks](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-dem/master/doc/model-talks.plantuml&counter=1)
+![model-talks](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-demo/master/doc/model-talks.plantuml&counter=1)
 
 After starting the demo you can access this service via [http://localhost:4466/](http://localhost:4466/) and execute a query like.
 ```graphql
@@ -39,7 +39,7 @@ query {
 
 ### The touristy app
 The touristy app can store cities and some cool bars based on the next model.
-![model-cities](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-dem/master/doc/model-cities.plantuml&counter=1)
+![model-cities](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-demo/master/doc/model-cities.plantuml&counter=1)
 
 
 After starting the demo you can access this service via [http://localhost:4467/](http://localhost:4467/) and execute a query like.
