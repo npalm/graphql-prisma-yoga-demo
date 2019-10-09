@@ -31,7 +31,7 @@ object Person {
 
 object Conference {
     String : name
-    String : City
+    String : city
     List<Talk> : talks
 }
 

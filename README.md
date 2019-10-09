@@ -12,7 +12,7 @@ git clone https://github.com/npalm/graphql-prisma-demo.git --recurse-submodules
 ```
 Now point your browser to the [GraphQL Playground](http://localhost:4000)
 
-## 
+## Introduction
 
 This GraphQL demo is using yoga to combine the GraphQL model of two applications build using [Prisma](https://www.prisma.io/). The first application has a domain model of conferences, talks, speakers and comments. The second application is a touristy information model that is currently limited to store information about cities and some craft beer bars. 
 
