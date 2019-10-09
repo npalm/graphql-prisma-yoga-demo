@@ -38,7 +38,9 @@ query {
 ```
 
 ### The touristy app
+
 The touristy app can store cities and some cool bars based on the next model.
+
 ![model-cities](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-demo/master/doc/model-cities.plantuml&counter=1)
 
 
