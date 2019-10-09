@@ -1,0 +1,23 @@
+@startuml
+hide footbox
+skinparam roundcorner 20
+skinparam handwritten true
+skinparam backgroundcolor transparent
+
+skinparam note {
+  FontName Impact
+}
+
+
+object City {
+    String : name
+    List<Bar> : bars
+}
+
+object Bar {
+    String : name
+    City: city
+}
+
+City --{ Bar : has
+@enduml

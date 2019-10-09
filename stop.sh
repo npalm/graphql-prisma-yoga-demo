@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-./prisma/stop.sh
+cd prisma
+./stop.sh
+cd ..
