@@ -1,0 +1,56 @@
+@startuml
+hide footbox
+skinparam roundcorner 20
+skinparam handwritten true
+skinparam backgroundcolor transparent
+
+skinparam note {
+  FontName Impact
+}
+
+
+object Comment {
+    String : comment
+    String : author
+    Talk : talk
+    Date : createdOn
+}
+
+object Talk {
+    String : title
+    Person : speaker
+    List<Conference> : conferences
+}
+
+object Person {
+    String : name
+    String : githubAccount
+    String : blog
+    List<Talk> : talks
+}
+
+object Conference {
+    String : name
+    City : city
+    List<Talk> : talks
+}
+
+object City {
+    String : name
+    List<Bar> : bars
+}
+
+object Bar {
+    String : name
+    City: city
+}
+
+
+
+Conference }--{ Talk : has
+Conference )-- City : held
+Talk --{ Comment : has
+Talk }--{ Person : hasSpeaker
+City --{ Bar : has
+
+@enduml
