@@ -146,10 +146,18 @@ type City {
     id: ID!
     name: String!
     bars: [Bar]
+    restaurants: [Restaurant]
 }
 
 type Bar {
     id: ID!
     name: String!
     city: City!
+}
+
+type Restaurant {
+    id: ID!
+    name: String! 
+    city: City!
+    cuisine: String
 }

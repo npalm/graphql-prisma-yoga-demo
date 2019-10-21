@@ -3,6 +3,7 @@ hide footbox
 skinparam roundcorner 20
 skinparam handwritten true
 skinparam backgroundcolor transparent
+skinparam minClassWidth 100
 
 skinparam note {
   FontName Impact
@@ -35,9 +36,11 @@ object Conference {
     List<Talk> : talks
 }
 
+
 object City {
     String : name
     List<Bar> : bars
+    List<Restaurant> : restaurants
 }
 
 object Bar {
@@ -45,6 +48,11 @@ object Bar {
     City: city
 }
 
+object Restaurant {
+    String : name
+    City: city
+    String: cuisine
+}
 
 
 Conference }--{ Talk : has
@@ -52,5 +60,5 @@ Conference )-- City : held
 Talk --{ Comment : has
 Talk }--{ Person : hasSpeaker
 City --{ Bar : has
-
+City --{ Restaurant
 @enduml

@@ -52,6 +52,10 @@ query {
     bars {
       name
     }
+    restaurants {
+      name
+      cuisine
+    }
   }
 }
 ```
@@ -70,6 +74,10 @@ query {
       name
       bars {
         name
+      }
+      restaurants {
+        name
+        cuisine
       }
     }
   }
