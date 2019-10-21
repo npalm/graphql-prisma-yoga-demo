@@ -66,7 +66,10 @@ const Query = {
   conference(parent, args, ctx, info) {
     const fragment = `fragment EnsureCity on Conference { city }`
     return ctx.db.query.conference({ where: { id: args.id } }, addFragmentToInfo(info, fragment))
-  }
+  },
+  city(parent, args, ctx, info) {
+    return ctx.dbcity.query.city({ where: { id: args.id } })
+  },
 }
 
 module.exports = Query

@@ -15,6 +15,7 @@ type Query {
     comment(id: ID!): Comment
     # Find comments
     comments: [Comment!]
+    city(id: ID!): City
 }
 
 type Mutation {
