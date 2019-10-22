@@ -1,4 +1,5 @@
 const { addFragmentToInfo } = require('graphql-binding')
+const { forwardTo } = require('prisma-binding')
 
 function personsQuery(parent, args, ctx, info) {
 
@@ -67,9 +68,10 @@ const Query = {
     const fragment = `fragment EnsureCity on Conference { city }`
     return ctx.db.query.conference({ where: { id: args.id } }, addFragmentToInfo(info, fragment))
   },
-  city(parent, args, ctx, info) {
-    return ctx.dbcity.query.city({ where: { id: args.id } })
-  },
+  // city(parent, args, ctx, info) {
+  //   return ctx.dbcity.query.city({ where: { id: args.id } })
+  // },
+  city: forwardTo('dbcity')
 }
 
 module.exports = Query

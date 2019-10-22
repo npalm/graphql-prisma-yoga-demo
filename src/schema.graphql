@@ -15,7 +15,7 @@ type Query {
     comment(id: ID!): Comment
     # Find comments
     comments: [Comment!]
-    city(id: ID!): City
+    city(where: CityWhereUniqueInput!): City
 }
 
 type Mutation {
@@ -146,7 +146,7 @@ type Me {
 type City {
     id: ID!
     name: String!
-    bars: [Bar]
+    bars: [Bar!]
     restaurants: [Restaurant]
 }
 
@@ -162,3 +162,9 @@ type Restaurant {
     city: City!
     cuisine: String
 }
+
+input CityWhereUniqueInput {
+  id: ID
+  name: String
+}
+
