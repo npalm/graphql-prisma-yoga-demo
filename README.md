@@ -2,7 +2,7 @@
 
 # GraphQL Yoga demo
 
-This example shows how you can simply map one GraphQL model to another and how you can combine tow models to one GrahpQL model using [Yoga](https://github.com/prisma-labs/graphql-yoga)
+This example shows how you can simply map one GraphQL model to another and how you can combine tow models to one GraphQL model using [Yoga](https://github.com/prisma-labs/graphql-yoga)
 
 ## TL:TR
 
@@ -61,7 +61,7 @@ query {
 ```
 
 ### Yoga app
-With the yoga app we combine the model to one model. So you can find for the city where a conference is some touristy information. Besides that the conference app is actually based on a [Spring Boot GraphqQL example](https://github.com/npalm/graphql-java-demo). Which has a slight different schema. The schema of the conference app is generated via prisma based on a data structure. With yoga we can map the schema on one of our choice. In this case the same as used in the Spring Boot example. 
+With the yoga app we combine the model to one model. So you can find for the city where a conference is some touristy information. Besides that the conference app is actually based on a [Spring Boot GraphQL example](https://github.com/npalm/graphql-java-demo). Which has a slight different schema. The schema of the conference app is generated via prisma based on a data structure. With yoga we can map the schema on one of our choice. In this case the same as used in the Spring Boot example. 
 
 ![model](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/npalm/graphql-prisma-yoga-demo/master/doc/model.plantuml&counter=1)
 
