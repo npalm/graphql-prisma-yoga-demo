@@ -74,4 +74,11 @@ const Query = {
   city: forwardTo('dbcity')
 }
 
-module.exports = Query
+const Conference = {
+  location(parent, args, ctx, info) {
+    return ctx.dbcity.query.city({ where: { name: parent.city } }, info)
+  },
+}
+
+
+module.exports = { Query, Conference }
